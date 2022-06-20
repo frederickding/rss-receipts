@@ -23,6 +23,8 @@ url = http://nginx.org/index.rss
 print_title = yes
 ```
 
+Then run the main Python script, [main.py](main.py).
+
 Because the code uses [feedparser](https://pypi.org/project/feedparser/), 
 theoretically any supported format can be used. But only RSS 2.0 and RSS 1.0 
 feeds with appropriate titles and dates have been tested.
