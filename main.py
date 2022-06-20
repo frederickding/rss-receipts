@@ -23,9 +23,6 @@ def setup():
         print("Configuration file required - config.ini", file=sys.stderr)
         exit(1)
     if not _config.sections():
-        print("Configuration file has issues - need sections", file=sys.stderr)
-        exit(2)
-    if len(_config.sections()) == 1 and 'DEFAULT' in _config.sections():
         print("You need to define at least one RSS feed with a section", file=sys.stderr)
         exit(2)
 
