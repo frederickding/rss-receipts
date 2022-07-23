@@ -8,6 +8,7 @@ import textwrap
 import time
 from urllib.parse import urlparse
 from escpos import *
+from unidecode import unidecode
 
 global _config
 NEWLINE = 128
@@ -65,17 +66,22 @@ def rss_section_loop():
             return_value.append(HR)
         feed = feedparser.parse(url)
         if len(feed.entries) > 0:
-            counter = 1
             limit = _config[section].getint('limit_entries_per_feed', 4)
-            for e in feed.entries:
-                if counter > limit:
-                    break
-                return_value.extend(wrapper.wrap("%s" % e.title))
+            sort_order = _config[section].get('sort_date', 'descending') != 'ascending'
+
+            # sort entries
+            entries = [item for item in feed.entries]
+            if any([i.published for i in entries]):
+                entries.sort(key=lambda x: x.published_parsed, reverse=sort_order)
+            elif any([i.updated for i in entries]):
+                entries.sort(key=lambda x: x.updated_parsed, reverse=sort_order)
+
+            for e in entries[0:limit]:
+                return_value.extend(wrapper.wrap(unidecode(e.title, errors='replace')))
                 if 'published' in e:
                     return_value.extend(wrapper.wrap("- %s" % time.strftime(date_format, e.published_parsed)))
                 elif 'updated_parsed' in e:
                     return_value.extend(wrapper.wrap("- %s" % time.strftime(date_format, e.updated_parsed)))
-                counter += 1
 
         if len(_config.sections()) > 1:
             return_value.append(HR)

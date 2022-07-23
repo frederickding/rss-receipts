@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rss-receipts"
-version = "0.1.0"
+version = "0.1.2"
 description = "Fetches RSS feeds from a configuration file and prints formatted output to an ESCPOS receipt printer"
 authors = ["Frederick Ding <frederick@frederickding.com>"]
 
@@ -8,6 +8,7 @@ authors = ["Frederick Ding <frederick@frederickding.com>"]
 python = "^3.9"
 feedparser = "^6.0.10"
 escpos = "^1.9"
+Unidecode = "^1.3.4"
 
 [tool.poetry.dev-dependencies]
 
