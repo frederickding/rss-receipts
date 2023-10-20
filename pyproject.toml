@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rss-receipts"
-version = "0.1.4"
+version = "0.1.5"
 description = "Fetches RSS feeds from a configuration file and prints formatted output to an ESCPOS receipt printer"
 authors = ["Frederick Ding <frederick@frederickding.com>"]
 
