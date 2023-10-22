@@ -49,12 +49,12 @@ files = [
 
 [[package]]
 name = "escpos"
-version = "1.9"
+version = "2.0.0"
 description = "Python library to manipulate ESC/POS Printers"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.10"
 files = [
-    {file = "escpos-1.9.tar.gz", hash = "sha256:5acc126fa5ddd6ec395ccd9c7729545e91d85ebb2f5b17e9ab88e33d6925f501"},
+    {file = "escpos-2.0.0.tar.gz", hash = "sha256:640594d524a5c8d1ccd27c8454a87b547e29fbc874552c435e386a4f5ee84566"},
 ]
 
 [package.dependencies]
@@ -366,5 +366,5 @@ files = [
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.9"
-content-hash = "7bcab8d8dcd7a906c0a352a30a2209693ff57c7b9069980afee5ace8daa3aa27"
+python-versions = "^3.10"
+content-hash = "137b74e3e6e24cbbac611e999c3184a0f5290a98f995e35098842f2f668850dd"

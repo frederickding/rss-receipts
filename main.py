@@ -7,7 +7,7 @@ import sys
 import textwrap
 import time
 from urllib.parse import urlparse
-from escpos import *
+from escpos.printer import Network
 from unidecode import unidecode
 
 global _config
@@ -92,7 +92,7 @@ def rss_section_loop():
 
 def print_to_receipt(text):
     global _config
-    p = printer.Network(_config['DEFAULT'].get('printer_ip'))
+    p = Network(_config['DEFAULT'].get('printer_ip'))
     p.set("left")
 
     p.ln()
