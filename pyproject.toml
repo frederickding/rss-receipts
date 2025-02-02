@@ -1,18 +1,17 @@
-[tool.poetry]
+[project]
 name = "rss-receipts"
-version = "0.1.7"
+version = "0.2.0"
 description = "Fetches RSS feeds from a configuration file and prints formatted output to an ESCPOS receipt printer"
-authors = ["Frederick Ding <frederick@frederickding.com>"]
-
-[tool.poetry.dependencies]
-python = "^3.10"
-feedparser = "^6.0.10"
-escpos = "^2.0"
-Unidecode = "^1.3"
-
-[tool.poetry.dev-dependencies]
+license = { text = "MIT" }
+authors = [ { name = "Frederick Ding", email = "frederick@frederickding.com" } ]
+requires-python = ">=3.10"
+dependencies = [
+    "feedparser (>=6.0.11,<7.0.0)",
+    "escpos (>=2.0,<3.0)",
+    "Unidecode>=1.3"
+]
 
 [build-system]
-requires = ["poetry-core>=1.6.0"]
+requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
