@@ -1,6 +1,6 @@
 [project]
 name = "rss-receipts"
-version = "0.2.0"
+version = "0.2.1"
 description = "Fetches RSS feeds from a configuration file and prints formatted output to an ESCPOS receipt printer"
 license = { text = "MIT" }
 authors = [ { name = "Frederick Ding", email = "frederick@frederickding.com" } ]

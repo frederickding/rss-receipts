@@ -1,8 +1,8 @@
-FROM python:3.12-slim as builder
+FROM python:3.13-slim as builder
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    POETRY_VERSION=2.0.1 \
+    POETRY_VERSION=2.1.3 \
     POETRY_NO_INTERACTION=1 \
     POETRY_CACHE_DIR=/var/cache/pypoetry
 
@@ -13,7 +13,7 @@ RUN poetry config virtualenvs.in-project true
 RUN poetry install --no-ansi
 
 # ---
-FROM python:3.12-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 COPY --from=builder /app /app
