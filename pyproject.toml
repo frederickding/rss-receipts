@@ -4,10 +4,10 @@ version = "0.2.0"
 description = "Fetches RSS feeds from a configuration file and prints formatted output to an ESCPOS receipt printer"
 license = { text = "MIT" }
 authors = [ { name = "Frederick Ding", email = "frederick@frederickding.com" } ]
-requires-python = ">=3.10"
+requires-python = ">=3.10,<4.0"
 dependencies = [
     "feedparser (>=6.0.11,<7.0.0)",
-    "escpos (>=2.0,<3.0)",
+    "python-escpos (>=3.0)",
     "Unidecode>=1.3"
 ]
 
