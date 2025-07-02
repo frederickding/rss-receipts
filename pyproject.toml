@@ -11,7 +11,7 @@ dependencies = [
     "Unidecode>=1.3"
 ]
 
-[poetry.core]
+[tool.poetry]
 package-mode = false
 
 [build-system]
